@@ -21,3 +21,8 @@ output "secret_access_key" {
   value       = aws_iam_access_key.user_key.secret
   sensitive   = true
 }
+
+output "console_signin_url" {
+  description = "AWS Console sign-in URL for the new user"
+  value       = "https://${data.aws_caller_identity.current.account_id}.signin.aws.amazon.com/console"
+}
